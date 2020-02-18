@@ -51,13 +51,13 @@ export default {
       return formatter.format(this.product.Price);
     },
     wrongName() {
-      return this.product.Name.length < 3;
+      return this.product.Name.length < 2;
     },
     wrongQuantity() {
       return (
         this.product.Quantity < 0 ||
         this.product.Quantity > 10 * 1000 ||
-        this.product.Quantity.trim() == ""
+        !this.product.Quantity
       );
     },
     wrongPrice() {
