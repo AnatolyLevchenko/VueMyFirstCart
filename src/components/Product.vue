@@ -54,7 +54,11 @@ export default {
       return this.product.Name.length < 3;
     },
     wrongQuantity() {
-      return this.product.Quantity < 0 || this.product.Quantity > 10 * 1000;
+      return (
+        this.product.Quantity < 0 ||
+        this.product.Quantity > 10 * 1000 ||
+        this.product.Quantity.trim() == ""
+      );
     },
     wrongPrice() {
       return this.product.Price < 0;
@@ -75,6 +79,7 @@ export default {
         }
         if (this.wrongQuantity) return;
         if (this.wrongPrice) return;
+        if (this.product.Price == "") this.product.Price = 0;
       }
 
       this.editMode = !this.editMode;
