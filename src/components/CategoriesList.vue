@@ -1,57 +1,11 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="category.html">Category</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">Sub-category</li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
+    <div class="container mt-3">
       <div class="row">
         <div class="col-12 col-sm-3">
           <category-filter></category-filter>
         </div>
-        <div class="col">
-          <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card">
-                <img
-                  class="card-img-top"
-                  src="https://dummyimage.com/600x400/55595c/fff"
-                  alt="Card image cap"
-                />
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="product.html" title="View Product">Product title</a>
-                  </h4>
-                  <p
-                    class="card-text"
-                  >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="row">
-                    <div class="col">
-                      <p class="btn btn-danger btn-block">99.00 $</p>
-                    </div>
-                    <div class="col">
-                      <a href="#" class="btn btn-success btn-block">Add to cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProductsGrid></ProductsGrid>
       </div>
     </div>
   </div>
@@ -59,10 +13,11 @@
 
 <script>
 import CategoryFilter from "./CategoryFilter";
-
+import ProductsGrid from "./ProductsGrid";
 export default {
   components: {
-    CategoryFilter
+    CategoryFilter,
+    ProductsGrid
   }
 };
 </script>
