@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -9,6 +10,7 @@ import routes from './routes'
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.use(Vuex)
 Vue.use(BootstrapVue)
 
 const router = new VueRouter({
