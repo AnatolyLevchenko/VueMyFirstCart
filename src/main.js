@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueRouter from 'vue-router'
 import routes from './routes'
+import products from '../store/modules/products'
 
 Vue.config.productionTip = false
 
@@ -30,8 +31,17 @@ Vue.filter('toCurrency', function (value) {
 });
 
 
+export const store = new Vuex.Store({
+  modules: {
+    products
+  },
+})
+
+
+
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
