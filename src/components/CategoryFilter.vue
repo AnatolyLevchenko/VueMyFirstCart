@@ -26,6 +26,10 @@ export default {
         {
           Name: "Computers",
           Id: 2
+        },
+        {
+          Name: "Cars",
+          Id: 3
         }
       ]
     };

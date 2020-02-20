@@ -1,7 +1,7 @@
 <template>
   <div class="col">
     <div class="row">
-      <ProductItem v-for="p in products" :product="p" :key="p.Id"></ProductItem>
+      <ProductItem v-for="p in filteredProducts" :product="p" :key="p.Id"></ProductItem>
     </div>
   </div>
 </template>
@@ -11,6 +11,14 @@ import ProductItem from "./ProductItem";
 export default {
   components: {
     ProductItem
+  },
+  computed: {
+    filteredProducts() {
+      let id = this.$route.params.id;
+      if (!id) return this.products;
+
+      return this.products.filter(p => p.CategoryId == id);
+    }
   },
   data() {
     return {
@@ -42,6 +50,34 @@ export default {
           Title: "Mobile Phone 4",
           Description: "Product Description",
           CategoryId: 1
+        },
+        {
+          Id: 5,
+          Price: 500,
+          Title: "Lapetop",
+          Description: "Product Description",
+          CategoryId: 2
+        },
+        {
+          Id: 6,
+          Price: 500,
+          Title: "Modern PC",
+          Description: "Product Description",
+          CategoryId: 2
+        },
+        {
+          Id: 7,
+          Price: 500,
+          Title: "Car 1",
+          Description: "Product Description",
+          CategoryId: 3
+        },
+        {
+          Id: 7,
+          Price: 500,
+          Title: "Car 2",
+          Description: "Product Description",
+          CategoryId: 3
         }
       ]
     };
