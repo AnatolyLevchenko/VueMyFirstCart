@@ -11,8 +11,9 @@ export default [{
         component: CartList
     },
     {
-        path: '/categories',
-        component: CategoriesList
+        path: '/categories/:id?',
+        component: CategoriesList,
+        name: 'categories'
     },
 
 ]

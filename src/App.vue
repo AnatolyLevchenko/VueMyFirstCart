@@ -9,7 +9,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="m-auto">
             <b-nav-item to="/" exact exact-active-class="active">Home</b-nav-item>
-            <b-nav-item to="/categories" exact exact-active-class="active">Categories</b-nav-item>
+            <b-nav-item :to="{ name: 'categories' }" exact exact-active-class="active">Categories</b-nav-item>
             <b-nav-item href="#">Product</b-nav-item>
             <b-nav-item to="/cart/" exact exact-active-class="active">Cart</b-nav-item>
           </b-navbar-nav>
@@ -31,7 +31,12 @@
 <script>
 export default {
   name: "App",
-  components: {}
+  components: {},
+  computed: {
+    currentPage() {
+      return this.$route.path;
+    }
+  }
 };
 </script>
 

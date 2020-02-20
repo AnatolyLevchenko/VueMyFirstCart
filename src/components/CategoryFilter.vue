@@ -4,8 +4,11 @@
       <i class="fa fa-list"></i> Categories
     </div>
     <ul class="list-group category_block">
-      <li v-for="item in categories" :key="item" class="list-group-item">
-        <a href="category.html">{{item}}</a>
+      <li class="list-group-item">
+        <router-link :to="'/categories/'">All</router-link>
+      </li>
+      <li v-for="item in categories" :key="item.Id" class="list-group-item">
+        <router-link :to="'/categories/'+item.Id">{{item.Name}}</router-link>
       </li>
     </ul>
   </div>
@@ -15,9 +18,19 @@
 export default {
   data() {
     return {
-      categories: ["Phones", "Computers", "Lamps", "Toys", "Cars"]
+      categories: [
+        {
+          Name: "Phones",
+          Id: 1
+        },
+        {
+          Name: "Computers",
+          Id: 2
+        }
+      ]
     };
-  }
+  },
+  methods: {}
 };
 </script>
 

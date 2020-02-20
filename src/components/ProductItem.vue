@@ -8,14 +8,12 @@
       />
       <div class="card-body">
         <h4 class="card-title">
-          <a href="product.html" title="View Product">Product title</a>
+          <a href="product.html" title="View Product">{{product.Title}}</a>
         </h4>
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text">{{product.Description}}</p>
         <div class="row">
           <div class="col">
-            <p class="btn btn-danger btn-block">99.00 $</p>
+            <p class="btn btn-danger btn-block">{{product.Price|toCurrency}}</p>
           </div>
           <div class="col">
             <a href="#" class="btn btn-success btn-block">Add to cart</a>
@@ -27,7 +25,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    product: {
+      required: true
+    }
+  }
+};
 </script>
 
 <style>
